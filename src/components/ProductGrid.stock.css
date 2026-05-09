@@ -1,0 +1,16 @@
+/* New Stock Label Styling */
+.product-stock-label {
+  font-size: 0.65rem;
+  font-weight: 700;
+  color: var(--text-muted);
+  background: rgba(255,255,255,0.04);
+  padding: 2px 6px;
+  border-radius: 4px;
+  margin-top: 2px;
+  font-family: 'JetBrains Mono', monospace;
+}
+
+.product-card:hover .product-stock-label {
+  color: var(--accent-light);
+  background: rgba(99,102,241,0.1);
+}

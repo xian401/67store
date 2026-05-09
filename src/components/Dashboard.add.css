@@ -1,0 +1,126 @@
+/* Existing styles ... */
+
+.panel-actions {
+  display: flex;
+  gap: 0.75rem;
+}
+
+.panel-action-btn.primary {
+  background: var(--gradient-gcash);
+  color: white;
+  border: none;
+  box-shadow: 0 4px 12px rgba(0, 85, 255, 0.2);
+}
+
+.panel-action-btn.primary:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 6px 16px rgba(0, 85, 255, 0.3);
+}
+
+/* Add Product Form */
+.add-product-form-container {
+  background: var(--surface);
+  border: 1px solid var(--border-active);
+  border-radius: var(--radius-lg);
+  padding: 1.5rem;
+  margin-bottom: 1.5rem;
+  box-shadow: var(--shadow-md);
+}
+
+.add-product-form {
+  display: flex;
+  flex-direction: column;
+  gap: 1.25rem;
+}
+
+.form-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.form-header h4 { font-size: 1rem; font-weight: 700; color: var(--text-primary); }
+
+.close-form {
+  background: none;
+  border: none;
+  color: var(--text-muted);
+  cursor: pointer;
+  padding: 4px;
+}
+
+.form-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(140px, 1fr));
+  gap: 1rem;
+}
+
+.form-group {
+  display: flex;
+  flex-direction: column;
+  gap: 0.4rem;
+}
+
+.form-group label {
+  font-size: 0.75rem;
+  font-weight: 600;
+  color: var(--text-secondary);
+}
+
+.form-group input, .form-group select {
+  background: var(--bg-card);
+  border: 1px solid var(--border);
+  border-radius: 8px;
+  padding: 0.65rem 0.85rem;
+  color: var(--text-primary);
+  font-size: 0.85rem;
+  outline: none;
+  transition: var(--transition);
+}
+
+.form-group input:focus, .form-group select:focus {
+  border-color: var(--accent);
+  box-shadow: 0 0 0 3px var(--accent-glow);
+}
+
+.emoji-group input {
+  text-align: center;
+  font-size: 1.2rem;
+}
+
+.form-footer {
+  display: flex;
+  justify-content: flex-end;
+}
+
+.save-btn {
+  background: var(--success);
+  color: white;
+  border: none;
+  padding: 0.75rem 1.5rem;
+  border-radius: 10px;
+  font-size: 0.85rem;
+  font-weight: 700;
+  cursor: pointer;
+  transition: var(--transition);
+}
+
+.save-btn:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 4px 12px var(--success-bg);
+}
+
+.delete-row-btn {
+  background: none;
+  border: none;
+  color: var(--text-muted);
+  cursor: pointer;
+  padding: 8px;
+  border-radius: 6px;
+  transition: var(--transition);
+}
+
+.delete-row-btn:hover {
+  background: var(--danger-bg);
+  color: var(--danger);
+}

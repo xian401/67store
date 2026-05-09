@@ -1,0 +1,144 @@
+.loading-screen {
+  position: fixed;
+  inset: 0;
+  background: var(--bg-primary);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  z-index: 1000;
+  animation: fadeOut 0.5s ease 2.5s forwards;
+}
+
+.loading-content {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 1.5rem;
+  text-align: center;
+}
+
+.loading-logo-container {
+  position: relative;
+  width: 100px;
+  height: 100px;
+  background: var(--bg-card);
+  border: 1px solid var(--border);
+  border-radius: 30px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 3.5rem;
+  box-shadow: 0 0 40px rgba(99, 102, 241, 0.2);
+  overflow: hidden;
+}
+
+.logo-text {
+  font-size: 3rem;
+  font-weight: 900;
+  color: var(--accent-light);
+  position: relative;
+  z-index: 2;
+  letter-spacing: -2px;
+  animation: logoPulse 1.5s ease-in-out infinite;
+}
+
+.loading-icon-svg {
+  font-size: 3rem;
+  color: var(--accent-light);
+  position: relative;
+  z-index: 2;
+  animation: logoPulse 1.5s ease-in-out infinite;
+}
+
+.loading-shimmer {
+  position: absolute;
+  top: 0;
+  left: -150%;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(
+    90deg,
+    transparent,
+    rgba(255, 255, 255, 0.1),
+    transparent
+  );
+  transform: skewX(-20deg);
+  animation: shimmerMove 1.5s infinite;
+}
+
+.loading-title {
+  font-size: 2.5rem;
+  font-weight: 900;
+  letter-spacing: -1.5px;
+  background: var(--gradient-1);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  margin: 0;
+}
+
+.loading-subtitle {
+  font-size: 0.85rem;
+  color: var(--text-muted);
+  text-transform: uppercase;
+  letter-spacing: 3px;
+  margin-top: -0.5rem;
+}
+
+.loading-bar-container {
+  width: 240px;
+  height: 4px;
+  background: var(--surface);
+  border-radius: 10px;
+  overflow: hidden;
+  margin-top: 1rem;
+}
+
+.loading-bar-fill {
+  height: 100%;
+  width: 0%;
+  background: var(--gradient-1);
+  border-radius: 10px;
+  animation: loadProgress 2s ease-out forwards;
+}
+
+.loading-status {
+  font-size: 0.75rem;
+  color: var(--text-secondary);
+  font-weight: 500;
+  animation: fadeInOut 2s infinite;
+}
+
+.loading-footer {
+  position: absolute;
+  bottom: 2rem;
+  font-size: 0.7rem;
+  color: var(--text-muted);
+  letter-spacing: 1px;
+}
+
+@keyframes logoPulse {
+  0%, 100% { transform: scale(1); }
+  50% { transform: scale(1.1); }
+}
+
+@keyframes shimmerMove {
+  0% { left: -150%; }
+  100% { left: 150%; }
+}
+
+@keyframes loadProgress {
+  0% { width: 0%; }
+  30% { width: 40%; }
+  70% { width: 85%; }
+  100% { width: 100%; }
+}
+
+@keyframes fadeInOut {
+  0%, 100% { opacity: 0.5; }
+  50% { opacity: 1; }
+}
+
+@keyframes fadeOut {
+  to { opacity: 0; visibility: hidden; }
+}

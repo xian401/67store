@@ -1,0 +1,189 @@
+.receipt-overlay {
+  position: fixed;
+  inset: 0;
+  background: rgba(0,0,0,0.75);
+  z-index: 700;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 1rem;
+  animation: fadeIn 0.3s ease;
+}
+.receipt-modal {
+  background: var(--bg-secondary);
+  border: 1px solid var(--border);
+  border-radius: var(--radius-xl);
+  width: 380px;
+  max-width: 95vw;
+  max-height: 90vh;
+  overflow-y: auto;
+  position: relative;
+  animation: slideUp 0.4s ease;
+  box-shadow: var(--shadow-lg);
+}
+.receipt-close {
+  position: absolute;
+  top: 12px;
+  right: 12px;
+  background: var(--bg-card);
+  border: 1px solid var(--border);
+  color: var(--text-primary);
+  width: 32px;
+  height: 32px;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  z-index: 2;
+  transition: var(--transition);
+}
+.receipt-close:hover { background: var(--danger-bg); border-color: var(--danger); color: var(--danger); }
+
+/* Paper receipt look */
+.receipt-paper {
+  padding: 1.75rem 1.5rem;
+  background: linear-gradient(180deg, #1e1e32 0%, var(--bg-secondary) 100%);
+  border-radius: var(--radius-xl) var(--radius-xl) 0 0;
+}
+.receipt-header-section {
+  text-align: center;
+  margin-bottom: 0.25rem;
+}
+.receipt-header-section.fintech {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding-bottom: 1rem;
+}
+.brand-logo-container {
+  background: var(--gradient-gcash);
+  width: 54px;
+  height: 54px;
+  border-radius: 18px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-bottom: 0.75rem;
+  box-shadow: 0 4px 15px rgba(0, 85, 255, 0.3);
+}
+.receipt-logo { font-size: 2.2rem; }
+.receipt-brand {
+  font-size: 1.5rem;
+  font-weight: 900;
+  letter-spacing: 2px;
+  background: var(--gradient-gcash);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+.receipt-tagline {
+  font-size: 0.7rem;
+  color: var(--text-muted);
+  text-transform: uppercase;
+  letter-spacing: 2px;
+}
+.receipt-divider {
+  border: none;
+  border-top: 1px dashed var(--border);
+  margin: 0.75rem 0;
+}
+.receipt-divider.thick {
+  border-top: 2px dashed var(--accent);
+  margin: 0.5rem 0;
+}
+.receipt-meta { display: flex; flex-direction: column; gap: 0.3rem; }
+.receipt-meta-row {
+  display: flex;
+  justify-content: space-between;
+  font-size: 0.78rem;
+  color: var(--text-secondary);
+}
+.mono {
+  font-family: 'JetBrains Mono', monospace;
+  font-weight: 500;
+}
+.receipt-items-list { display: flex; flex-direction: column; gap: 0.4rem; }
+.receipt-item-row {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  font-size: 0.8rem;
+}
+.receipt-item-detail {
+  display: flex;
+  gap: 0.5rem;
+  color: var(--text-primary);
+}
+.receipt-item-qty {
+  color: var(--accent-light);
+  font-weight: 700;
+  font-family: 'JetBrains Mono', monospace;
+  min-width: 24px;
+}
+.receipt-item-row .mono { color: var(--text-secondary); }
+.receipt-totals { display: flex; flex-direction: column; gap: 0.3rem; }
+.receipt-total-row {
+  display: flex;
+  justify-content: space-between;
+  font-size: 0.8rem;
+  color: var(--text-secondary);
+}
+.receipt-grand-total {
+  display: flex;
+  justify-content: space-between;
+  font-size: 1.15rem;
+  font-weight: 800;
+  color: var(--text-primary);
+  padding: 0.25rem 0;
+}
+.receipt-grand-total .mono {
+  color: var(--success);
+  font-size: 1.15rem;
+  font-weight: 800;
+}
+.receipt-footer-text {
+  text-align: center;
+  color: var(--text-muted);
+  font-size: 0.75rem;
+  line-height: 1.6;
+}
+.receipt-footer-text .small { font-size: 0.65rem; margin-top: 2px; }
+
+/* Actions */
+.receipt-actions {
+  display: flex;
+  gap: 0.5rem;
+  padding: 1rem 1.5rem 1.5rem;
+}
+.receipt-action-btn {
+  flex: 1;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.35rem;
+  padding: 0.65rem 0.5rem;
+  border-radius: var(--radius-md);
+  border: 1px solid var(--border);
+  font-size: 0.75rem;
+  font-weight: 600;
+  cursor: pointer;
+  transition: var(--transition);
+  font-family: inherit;
+}
+.receipt-action-btn.print {
+  background: var(--accent);
+  border-color: var(--accent);
+  color: white;
+}
+.receipt-action-btn.print:hover { box-shadow: 0 0 20px rgba(99,102,241,0.4); }
+.receipt-action-btn.download {
+  background: var(--bg-card);
+  color: var(--text-primary);
+}
+.receipt-action-btn.download:hover { border-color: var(--border-active); }
+.receipt-action-btn.new-order {
+  background: var(--success-bg);
+  border-color: rgba(16,185,129,0.3);
+  color: var(--success);
+}
+.receipt-action-btn.new-order:hover { background: var(--success); color: white; }

@@ -1,0 +1,7 @@
+.loading-icon-svg {
+  font-size: 2.5rem;
+  color: var(--accent-light);
+  position: relative;
+  z-index: 2;
+  animation: logoPulse 1.5s ease-in-out infinite;
+}
